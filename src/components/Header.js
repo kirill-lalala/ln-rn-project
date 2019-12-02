@@ -38,17 +38,21 @@ const styles = StyleSheet.create({
     fontSize: 49,
     fontWeight: '100',
     color: '#fff',
+    fontFamily: 'Montserrat-ExtraBold',
   },
   yellow: {
     color: '#F7D352',
   },
   logoText: {
     marginLeft: 15,
+    paddingTop: 7,
+    justifyContent: 'center',
   },
   word: {
     fontSize: 16,
-    lineHeight: 20,
+    lineHeight: 16,
     color: '#fff',
+    fontFamily: 'Montserrat-Medium',
   },
 });
 
