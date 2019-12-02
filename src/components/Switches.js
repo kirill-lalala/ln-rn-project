@@ -4,12 +4,12 @@ import {View, Text, StyleSheet, Button, TouchableHighlight} from 'react-native';
 const Switches = () => {
   return (
     <View style={styles.wrap}>
-      <TouchableHighlight onPress={true} underlayColor="white">
+      <TouchableHighlight underlayColor="white">
         <View style={styles.button}>
           <Text style={styles.buttonText}>Вход</Text>
         </View>
       </TouchableHighlight>
-      <TouchableHighlight onPress={true} underlayColor="white">
+      <TouchableHighlight underlayColor="white">
         <View style={styles.button}>
           <Text style={styles.buttonText}>Регистрация</Text>
         </View>
