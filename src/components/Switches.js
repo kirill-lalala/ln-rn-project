@@ -1,17 +1,33 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button, TouchableHighlight} from 'react-native';
 
 const Switches = () => {
   return (
-    <View>
-      <Text>Вход</Text>
-      <Text>Регестрация</Text>
+    <View style={styles.wrap}>
+      <TouchableHighlight onPress={true} underlayColor="white">
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Вход</Text>
+        </View>
+      </TouchableHighlight>
+      <TouchableHighlight onPress={true} underlayColor="white">
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Регистрация</Text>
+        </View>
+      </TouchableHighlight>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  wrap: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  buttonText: {
+    color: '#AEAEAE',
+    fontSize: 15,
+    fontFamily: 'RobotoSlab-Bold',
+  },
 });
 
 export default Switches;

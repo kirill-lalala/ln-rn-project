@@ -21,6 +21,7 @@
 		CE66F7E7071D43FFB10CB8E6 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3D64AB95463847C2881A349B /* Montserrat-SemiBold.otf */; };
 		DE3AC4ED9663414F9F31CD33 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 37F42F433C29408C9AF48080 /* Montserrat-ExtraBold.otf */; };
 		A8807E55AADB4D888FAD6434 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1AF9925EB6E4CD4B5643160 /* Montserrat-Medium.otf */; };
+		18704BB61B7543F485A8173E /* RobotoSlab-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF04CECDB254782B9E5CBB2 /* RobotoSlab-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		3D64AB95463847C2881A349B /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; name = "Montserrat-SemiBold.otf"; path = "../src/assets/fonts/Montserrat-SemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		37F42F433C29408C9AF48080 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; name = "Montserrat-ExtraBold.otf"; path = "../src/assets/fonts/Montserrat-ExtraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C1AF9925EB6E4CD4B5643160 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; name = "Montserrat-Medium.otf"; path = "../src/assets/fonts/Montserrat-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5AF04CECDB254782B9E5CBB2 /* RobotoSlab-Bold.otf */ = {isa = PBXFileReference; name = "RobotoSlab-Bold.otf"; path = "../src/assets/fonts/RobotoSlab-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				3D64AB95463847C2881A349B /* Montserrat-SemiBold.otf */,
 				37F42F433C29408C9AF48080 /* Montserrat-ExtraBold.otf */,
 				C1AF9925EB6E4CD4B5643160 /* Montserrat-Medium.otf */,
+				5AF04CECDB254782B9E5CBB2 /* RobotoSlab-Bold.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				CE66F7E7071D43FFB10CB8E6 /* Montserrat-SemiBold.otf in Resources */,
 				DE3AC4ED9663414F9F31CD33 /* Montserrat-ExtraBold.otf in Resources */,
 				A8807E55AADB4D888FAD6434 /* Montserrat-Medium.otf in Resources */,
+				18704BB61B7543F485A8173E /* RobotoSlab-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
