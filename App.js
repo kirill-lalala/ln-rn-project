@@ -6,10 +6,17 @@ export default function App() {
   return (
     <View style={styles.app}>
       <Header />
+      <View style={styles.main} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  app: {},
+  app: {
+    flex: 1,
+  },
+  main: {
+    flex: 7,
+    backgroundColor: '#fff',
+  },
 });
