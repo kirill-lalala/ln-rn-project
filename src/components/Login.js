@@ -5,32 +5,13 @@ import {
   StyleSheet,
   TextInput,
   TouchableHighlight,
-  Button,
 } from 'react-native';
+import Inputs from './Inputs';
 
 const Login = () => {
-  const [loginText, setLoginText] = useState('');
-  const [passwordText, setPasswordText] = useState('');
-  const [secureText, setsecureText] = useState(true);
-
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Email</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={text => setLoginText(text)}
-        value={loginText}
-        keyboardType="email-address"
-        autoFocus={true}
-      />
-
-      <Text style={styles.label}>Пароль</Text>
-      <TextInput
-        style={[styles.input, secureText && styles.password]}
-        onChangeText={text => setPasswordText(text)}
-        value={passwordText}
-        secureTextEntry={secureText}
-      />
+      <Inputs />
 
       <View style={styles.registration}>
         <Text style={styles.registrationText}>Еще не зарегистрированы?</Text>
@@ -53,25 +34,6 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
-  },
-  label: {
-    fontFamily: 'Ubuntu-Bold',
-    fontSize: 13,
-    color: '#252D76',
-    opacity: 0.5,
-  },
-  input: {
-    borderBottomWidth: 1,
-    borderStyle: 'solid',
-    borderBottomColor: 'rgba(37, 45, 118, 0.2)',
-    padding: 2,
-    fontSize: 14,
-    fontFamily: 'Quicksand-Bold',
-    color: '#252D76',
-    marginBottom: 24,
-  },
-  password: {
-    letterSpacing: 6,
   },
   registration: {
     alignItems: 'center',

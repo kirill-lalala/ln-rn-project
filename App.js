@@ -3,6 +3,7 @@ import {View, StyleSheet} from 'react-native';
 import Header from './src/components/Header';
 import Login from './src/components/Login';
 import Switches from './src/components/Switches';
+import Registration from './src/components/Registration';
 
 export default function App() {
   return (
@@ -10,7 +11,8 @@ export default function App() {
       <Header />
       <View style={styles.main}>
         <Switches />
-        <Login />
+        {/*<Login />*/}
+        <Registration />
       </View>
     </View>
   );
