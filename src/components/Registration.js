@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  CheckBox,
-  TouchableHighlight,
-} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import Checkbox from 'react-native-custom-checkbox';
 import Svg, {Path} from 'react-native-svg';
 import Inputs from './Inputs';
 import Button from './Button';
@@ -32,9 +27,10 @@ const Registration = () => {
 
       <Inputs />
       <View style={styles.policyBlock}>
-        <CheckBox />
+        <Checkbox style={styles.checkBox} />
         <Text style={styles.polityText}>
-          Я согласен с <Text style={styles.privacyPolicy}>Политикой Конфиденциальности</Text>
+          Я согласен с{' '}
+          <Text style={styles.privacyPolicy}>Политикой Конфиденциальности</Text>
         </Text>
       </View>
 
@@ -74,10 +70,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  checkBox: {
+    backgroundColor: '#E7E9F5',
+    borderRadius: 1,
+    borderWidth: 0,
+  },
   polityText: {
     width: '60%',
     marginLeft: 7,
-    paddingTop: 8,
+    paddingTop: 3,
     fontSize: 14,
     fontFamily: 'Montserrat-Medium',
   },
