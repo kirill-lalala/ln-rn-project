@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import Inputs from './Inputs';
 import Button from './Button';
+import Switches from './Switches';
 
 const Login = () => {
   return (
@@ -26,6 +27,10 @@ const Login = () => {
       </View>
     </View>
   );
+};
+
+Login.navigationOptions = {
+  // headerTitle: <Switches />,
 };
 
 const styles = StyleSheet.create({

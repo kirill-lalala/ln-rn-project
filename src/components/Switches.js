@@ -1,14 +1,17 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button, TouchableHighlight} from 'react-native';
 
-const Switches = () => {
+const Switches = props => {
   return (
     <View style={styles.wrap}>
-      <TouchableHighlight underlayColor="white">
+      <TouchableHighlight
+        underlayColor="white"
+        onPress={() => props.navigation.navigate('LoginScreen')}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Вход</Text>
         </View>
       </TouchableHighlight>
+
       <TouchableHighlight underlayColor="white">
         <View style={styles.button}>
           <Text style={styles.buttonText}>Регистрация</Text>
