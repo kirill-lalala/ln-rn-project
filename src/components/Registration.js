@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 import Inputs from './Inputs';
+import Button from './Button';
 
 const Registration = () => {
   return (
@@ -35,6 +36,10 @@ const Registration = () => {
         <Text style={styles.polityText}>
           Я согласен с <Text style={styles.privacyPolicy}>Политикой Конфиденциальности</Text>
         </Text>
+      </View>
+
+      <View style={styles.regButton}>
+        <Button text="Регистрация" />
       </View>
     </View>
   );
@@ -78,6 +83,10 @@ const styles = StyleSheet.create({
   },
   privacyPolicy: {
     color: '#3066E0',
+  },
+  regButton: {
+    alignItems: 'center',
+    marginTop: 40,
   },
 });
 

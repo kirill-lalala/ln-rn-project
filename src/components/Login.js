@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   View,
   Text,
   StyleSheet,
-  TextInput,
   TouchableHighlight,
 } from 'react-native';
 import Inputs from './Inputs';
+import Button from './Button';
 
 const Login = () => {
   return (
@@ -15,17 +15,14 @@ const Login = () => {
 
       <View style={styles.registration}>
         <Text style={styles.registrationText}>Еще не зарегистрированы?</Text>
+
         <TouchableHighlight underlayColor="white">
           <View style={styles.button}>
             <Text style={styles.regButtonText}>Регистрация</Text>
           </View>
         </TouchableHighlight>
 
-        <TouchableHighlight underlayColor="white">
-          <View style={styles.entryButton}>
-            <Text style={styles.entryButtonText}>Войти</Text>
-          </View>
-        </TouchableHighlight>
+        <Button text="Войти" />
       </View>
     </View>
   );
@@ -50,18 +47,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-SemiBold',
     fontSize: 14,
     marginBottom: 42,
-  },
-  entryButton: {
-    paddingTop: 8,
-    paddingBottom: 8,
-    paddingRight: 50,
-    paddingLeft: 50,
-    backgroundColor: '#3168DE',
-    borderRadius: 23,
-  },
-  entryButtonText: {
-    color: '#fff',
-    fontFamily: 'Quicksand-Bold',
   },
 });
 
