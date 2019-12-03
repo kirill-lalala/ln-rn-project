@@ -20,7 +20,8 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   header: {
-    flex: 1,
+    paddingTop: 10,
+    paddingBottom: 10,
     backgroundColor: '#3066E0',
     flexDirection: 'row',
     justifyContent: 'center',

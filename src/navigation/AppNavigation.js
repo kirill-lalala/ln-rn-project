@@ -11,9 +11,9 @@ const RootStack = createStackNavigator(
     RegistrationScreen: Registration,
   },
   {
-    // initialRouteName: 'RegistrationScreen',
+    initialRouteName: 'RegistrationScreen',
     defaultNavigationOptions: {
-      header: () => <Switches />,
+      header: props => <Switches {...props} />,
     },
   },
 );

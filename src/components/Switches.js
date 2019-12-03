@@ -12,7 +12,9 @@ const Switches = props => {
         </View>
       </TouchableHighlight>
 
-      <TouchableHighlight underlayColor="white">
+      <TouchableHighlight
+        underlayColor="white"
+        onPress={() => props.navigation.navigate('RegistrationScreen')}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Регистрация</Text>
         </View>

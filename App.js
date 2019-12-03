@@ -12,7 +12,6 @@ export default function App() {
     <View style={styles.app}>
       <Header />
       <View style={styles.main}>
-        {/*<Switches />*/}
         <AppNavigation />
       </View>
     </View>
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   main: {
-    flex: 7,
+    flex: 1,
     backgroundColor: '#fff',
     padding: 33,
   },
