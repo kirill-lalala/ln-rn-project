@@ -1,11 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Checkbox from 'react-native-custom-checkbox';
 import Svg, {Path} from 'react-native-svg';
 import Inputs from '../components/Inputs';
 import Button from '../components/Button';
+import fire from '../config/fire';
 
-const RegistrationScreen = () => {
+const RegistrationScreen = props => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorLoginMessage, setErrorLoginMessage] = useState(' ');
+  const [errorPasswordMessage, setErrorPasswordMessage] = useState(' ');
+  const [avatar, setAvatar] = useState(null);
+
+  const updateLogin = email => setEmail(email);
+  const updatePassword = password => setPassword(password);
+
+  const handleSignUp = () => {
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        props.navigation.navigate('Map');
+      })
+      .catch(error => {
+        switch (error.code) {
+          case 'auth/invalid-email':
+            return setErrorLoginMessage(
+              'Ошибка, неверный email. Попроуйте снова',
+            );
+          case 'auth/email-already-in-use':
+            return setErrorLoginMessage('Ошибка, email уже используется');
+          case 'auth/weak-password':
+            return setErrorPasswordMessage('Слабый пароль');
+          default:
+            return setErrorLoginMessage(error.message);
+        }
+      });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.photoBlock}>
@@ -25,7 +58,14 @@ const RegistrationScreen = () => {
         </View>
       </View>
 
-      <Inputs />
+      <Inputs
+        loginError={errorLoginMessage}
+        passwordError={errorPasswordMessage}
+        updateLogin={updateLogin}
+        updatePassword={updatePassword}
+        email={email}
+        password={password}
+      />
       <View style={styles.policyBlock}>
         <Checkbox style={styles.checkBox} />
         <Text style={styles.polityText}>
@@ -35,7 +75,7 @@ const RegistrationScreen = () => {
       </View>
 
       <View style={styles.regButton}>
-        <Button text="Регистрация" />
+        <Button text="Регистрация" handle={handleSignUp} />
       </View>
     </View>
   );
@@ -69,6 +109,7 @@ const styles = StyleSheet.create({
   policyBlock: {
     flexDirection: 'row',
     justifyContent: 'center',
+    marginTop: 16,
   },
   checkBox: {
     backgroundColor: '#E7E9F5',

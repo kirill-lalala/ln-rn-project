@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, TouchableHighlight, View, StyleSheet} from 'react-native';
 
-const Button = ({text}) => {
+const Button = ({text, handle}) => {
   return (
-    <TouchableHighlight underlayColor="white">
+    <TouchableHighlight underlayColor="white" onPress={handle}>
       <View style={styles.button}>
         <Text style={styles.buttonText}>{text}</Text>
       </View>

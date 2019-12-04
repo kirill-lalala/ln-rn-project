@@ -1,9 +1,14 @@
 import {StyleSheet, Text, TextInput, View} from 'react-native';
 import React, {useState} from 'react';
 
-const Inputs = ({loginError, passwordError}) => {
-  const [loginText, setLoginText] = useState('');
-  const [passwordText, setPasswordText] = useState('');
+const Inputs = ({
+  loginError,
+  passwordError,
+  updateLogin,
+  updatePassword,
+  email,
+  password,
+}) => {
   const [secureText, setsecureText] = useState(true);
 
   return (
@@ -11,8 +16,8 @@ const Inputs = ({loginError, passwordError}) => {
       <Text style={styles.label}>Email</Text>
       <TextInput
         style={styles.input}
-        onChangeText={text => setLoginText(text)}
-        value={loginText}
+        onChangeText={text => updateLogin(text)}
+        value={email}
         keyboardType="email-address"
         // autoFocus={true}
       />
@@ -21,8 +26,8 @@ const Inputs = ({loginError, passwordError}) => {
       <Text style={styles.label}>Пароль</Text>
       <TextInput
         style={[styles.input, secureText && styles.password]}
-        onChangeText={text => setPasswordText(text)}
-        value={passwordText}
+        onChangeText={text => updatePassword(text)}
+        value={password}
         secureTextEntry={secureText}
       />
       {passwordError && <Text style={styles.error}>{passwordError}</Text>}
