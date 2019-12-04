@@ -14,7 +14,7 @@ const Inputs = () => {
         onChangeText={text => setLoginText(text)}
         value={loginText}
         keyboardType="email-address"
-        autoFocus={true}
+        // autoFocus={true}
       />
 
       <Text style={styles.label}>Пароль</Text>

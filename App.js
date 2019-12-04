@@ -1,30 +1,52 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import Header from './src/components/Header';
-import {EntryNavigation} from './src/navigation/EntryNavigation';
-import 'react-native-gesture-handler';
-import {AppNavigation} from './src/navigation/AppNavigation';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import LoadingScreen from './src/screen/LoadingScreen';
+import MapScreen from './src/screen/MapScreen';
+import HomeScreen from './src/screen/HomeScreen';
+import LoginScreen from './src/screen/LoginScreen';
+import RegistrationScreen from './src/screen/RegistrationScreen';
+import Switches from './src/components/Switches';
 
-const App = () => {
-  return (
-    <View style={styles.app}>
-      <Header />
-      <View style={styles.main}>
-        <EntryNavigation />
-      </View>
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  app: {
-    flex: 1,
+const AppStack = createStackNavigator(
+  {
+    Home: HomeScreen,
   },
-  main: {
-    flex: 1,
-    backgroundColor: '#fff',
-    padding: 33,
+  {
+    defaultNavigationOptions: {
+      header: null,
+    },
   },
-});
+);
 
-export default App;
+const AuthStack = createStackNavigator(
+  {
+    Login: LoginScreen,
+    Registration: RegistrationScreen,
+  },
+  {
+    initialRouteName: 'Login',
+    defaultNavigationOptions: {
+      header: props => <Switches {...props} />,
+    },
+  },
+);
+
+export const AuthNavigation = createAppContainer(AuthStack);
+
+export default createAppContainer(
+  createStackNavigator(
+    {
+      Loading: LoadingScreen,
+      Map: MapScreen,
+      Auth: AuthStack,
+      App: AppStack,
+    },
+    {
+      initialRouteName: 'Loading',
+      defaultNavigationOptions: {
+        header: null,
+      },
+    },
+  ),
+);

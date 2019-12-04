@@ -5,7 +5,7 @@ import fire from '../config/fire';
 const LoadingScreen = props => {
   useEffect(() => {
     fire.auth().onAuthStateChanged(user => {
-      props.navigation.navigate(user ? 'Map' : 'Login');
+      props.navigation.navigate(user ? 'Map' : 'App');
     });
   }, [props.navigation]);
 
