@@ -1,15 +1,16 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Header from './src/components/Header';
-import {AppNavigation} from './src/navigation/AppNavigation';
+import {EntryNavigation} from './src/navigation/EntryNavigation';
 import 'react-native-gesture-handler';
+import {AppNavigation} from './src/navigation/AppNavigation';
 
 const App = () => {
   return (
     <View style={styles.app}>
       <Header />
       <View style={styles.main}>
-        <AppNavigation />
+        <EntryNavigation />
       </View>
     </View>
   );
