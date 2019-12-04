@@ -1,7 +1,7 @@
 import {StyleSheet, Text, TextInput, View} from 'react-native';
 import React, {useState} from 'react';
 
-const Inputs = () => {
+const Inputs = ({loginError, passwordError}) => {
   const [loginText, setLoginText] = useState('');
   const [passwordText, setPasswordText] = useState('');
   const [secureText, setsecureText] = useState(true);
@@ -16,6 +16,7 @@ const Inputs = () => {
         keyboardType="email-address"
         // autoFocus={true}
       />
+      {loginError && <Text style={styles.error}>{loginError}</Text>}
 
       <Text style={styles.label}>Пароль</Text>
       <TextInput
@@ -24,6 +25,7 @@ const Inputs = () => {
         value={passwordText}
         secureTextEntry={secureText}
       />
+      {passwordError && <Text style={styles.error}>{passwordError}</Text>}
     </View>
   );
 };
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#252D76',
     opacity: 0.5,
+    marginTop: 8,
   },
   input: {
     borderBottomWidth: 1,
@@ -43,10 +46,15 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: 'Quicksand-Bold',
     color: '#252D76',
-    marginBottom: 24,
+    marginBottom: 8,
   },
   password: {
     letterSpacing: 6,
+  },
+  error: {
+    color: '#E81D4E',
+    fontSize: 12,
+    fontFamily: 'Roboto-Medium',
   },
 });
 

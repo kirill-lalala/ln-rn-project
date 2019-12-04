@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableHighlight} from 'react-native';
 import Inputs from '../components/Inputs';
 import Button from '../components/Button';
+import * as firebase from 'firebase';
 
 const LoginScreen = props => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorLoginMessage, setErrorLoginMessage] = useState(' ');
+  const [errorPasswordMessage, setErrorPasswordMessage] = useState('Jib,rf ');
+
   return (
     <View style={styles.container}>
-      <Inputs />
+      <Inputs
+        loginError={errorLoginMessage}
+        passwordError={errorPasswordMessage}
+      />
 
       <View style={styles.registration}>
         <Text style={styles.registrationText}>Еще не зарегистрированы?</Text>
@@ -35,7 +44,7 @@ const styles = StyleSheet.create({
   },
   registration: {
     alignItems: 'center',
-    marginTop: 30,
+    marginTop: 22,
   },
   registrationText: {
     color: '#929292',

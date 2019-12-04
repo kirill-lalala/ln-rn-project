@@ -24,6 +24,7 @@
 		18704BB61B7543F485A8173E /* RobotoSlab-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5AF04CECDB254782B9E5CBB2 /* RobotoSlab-Bold.otf */; };
 		0A68D588FD8E4EBEB9929449 /* Ubuntu-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 329B1C1E2AE84DD8A9A665A8 /* Ubuntu-Bold.otf */; };
 		83064B83CA9B41CD8A9C2614 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52B7C9B4EB04463C899588A1 /* Quicksand-Bold.otf */; };
+		52EA35D4C627466F8E95B0E9 /* Roboto-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CC1B0C18AEBB435AAA188617 /* Roboto-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		5AF04CECDB254782B9E5CBB2 /* RobotoSlab-Bold.otf */ = {isa = PBXFileReference; name = "RobotoSlab-Bold.otf"; path = "../src/assets/fonts/RobotoSlab-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		329B1C1E2AE84DD8A9A665A8 /* Ubuntu-Bold.otf */ = {isa = PBXFileReference; name = "Ubuntu-Bold.otf"; path = "../src/assets/fonts/Ubuntu-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		52B7C9B4EB04463C899588A1 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; name = "Quicksand-Bold.otf"; path = "../src/assets/fonts/Quicksand-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CC1B0C18AEBB435AAA188617 /* Roboto-Medium.otf */ = {isa = PBXFileReference; name = "Roboto-Medium.otf"; path = "../src/assets/fonts/Roboto-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				5AF04CECDB254782B9E5CBB2 /* RobotoSlab-Bold.otf */,
 				329B1C1E2AE84DD8A9A665A8 /* Ubuntu-Bold.otf */,
 				52B7C9B4EB04463C899588A1 /* Quicksand-Bold.otf */,
+				CC1B0C18AEBB435AAA188617 /* Roboto-Medium.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				18704BB61B7543F485A8173E /* RobotoSlab-Bold.otf in Resources */,
 				0A68D588FD8E4EBEB9929449 /* Ubuntu-Bold.otf in Resources */,
 				83064B83CA9B41CD8A9C2614 /* Quicksand-Bold.otf in Resources */,
+				52EA35D4C627466F8E95B0E9 /* Roboto-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
