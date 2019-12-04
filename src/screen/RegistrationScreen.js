@@ -2,10 +2,10 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Checkbox from 'react-native-custom-checkbox';
 import Svg, {Path} from 'react-native-svg';
-import Inputs from './Inputs';
-import Button from './Button';
+import Inputs from '../components/Inputs';
+import Button from '../components/Button';
 
-const Registration = () => {
+const RegistrationScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.photoBlock}>
@@ -91,4 +91,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Registration;
+export default RegistrationScreen;

@@ -1,10 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableHighlight} from 'react-native';
-import Inputs from './Inputs';
-import Button from './Button';
-import Switches from './Switches';
+import Inputs from '../components/Inputs';
+import Button from '../components/Button';
 
-const Login = props => {
+const LoginScreen = props => {
   return (
     <View style={styles.container}>
       <Inputs />
@@ -14,7 +13,7 @@ const Login = props => {
 
         <TouchableHighlight
           underlayColor="white"
-          onPress={() => props.navigation.navigate('RegistrationScreen')}>
+          onPress={() => props.navigation.navigate('Registration')}>
           <View style={styles.button}>
             <Text style={styles.regButtonText}>Регистрация</Text>
           </View>
@@ -26,7 +25,7 @@ const Login = props => {
   );
 };
 
-Login.navigationOptions = {
+LoginScreen.navigationOptions = {
   // headerTitle: <Switches />,
 };
 
@@ -52,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default LoginScreen;

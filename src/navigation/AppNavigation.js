@@ -1,17 +1,21 @@
+import React from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import Login from '../components/Login';
-import Registration from '../components/Registration';
-import React from 'react';
+import LoginScreen from '../screen/LoginScreen';
+import RegistrationScreen from '../screen/RegistrationScreen';
 import Switches from '../components/Switches';
+import MapScreen from '../screen/MapScreen';
+import LoadingScreen from '../screen/LoadingScreen';
 
 const RootStack = createStackNavigator(
   {
-    LoginScreen: Login,
-    RegistrationScreen: Registration,
+    Login: LoginScreen,
+    Registration: RegistrationScreen,
+    Map: MapScreen,
+    Loading: LoadingScreen,
   },
   {
-    initialRouteName: 'RegistrationScreen',
+    initialRouteName: 'Loading',
     defaultNavigationOptions: {
       header: props => <Switches {...props} />,
     },
