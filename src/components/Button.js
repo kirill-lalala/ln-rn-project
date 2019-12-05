@@ -1,21 +1,27 @@
-import React, {useState} from 'react';
-import {Text, TouchableHighlight, View, StyleSheet} from 'react-native';
+import React from 'react';
+import {Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 import {Loader} from './Loader';
 
-const Button = ({text, handle, inversion, disable}) => {
+const Button = ({text, handle, inversion, showLoading, isChecked = true}) => {
   return (
     <>
-      <TouchableHighlight
+      <TouchableOpacity
+        disabled={showLoading || !isChecked}
         underlayColor="white"
         onPress={handle}
         style={{marginBottom: '2%'}}>
-        <View style={[styles.button, inversion && styles.buttonInversion]}>
+        <View
+          style={[
+            styles.button,
+            inversion && styles.buttonInversion,
+            !isChecked && styles.disable,
+          ]}>
           <Text style={[styles.buttonText, inversion && styles.textInversion]}>
             {text}
           </Text>
         </View>
-      </TouchableHighlight>
-      {disable && <Loader />}
+      </TouchableOpacity>
+      {showLoading && <Loader />}
     </>
   );
 };
@@ -38,6 +44,9 @@ const styles = StyleSheet.create({
   },
   textInversion: {
     color: '#3168DE',
+  },
+  disable: {
+    backgroundColor: '#a6bdf2',
   },
 });
 export default Button;

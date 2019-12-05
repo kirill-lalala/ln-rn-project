@@ -65,7 +65,7 @@ const LoginScreen = props => {
           </View>
         </TouchableHighlight>
 
-        <Button text="Войти" handle={handleLogin} disable={isDisableElement} />
+        <Button text="Войти" handle={handleLogin} showLoading={isDisableElement} />
       </View>
     </View>
   );

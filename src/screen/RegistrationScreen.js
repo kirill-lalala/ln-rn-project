@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import Checkbox from 'react-native-custom-checkbox';
+import CheckBox from 'react-native-check-box';
 import Svg, {Path} from 'react-native-svg';
 import Inputs from '../components/Inputs';
 import Button from '../components/Button';
@@ -14,6 +14,7 @@ const RegistrationScreen = props => {
   const [errorPasswordMessage, setErrorPasswordMessage] = useState(' ');
   const [avatar, setAvatar] = useState(null);
   const [isDisableElement, toggleDisableElement] = useState(false);
+  const [isChecked, toggleChecked] = useState(false);
 
   const handlePickAvatar = () => {
     const options = {
@@ -103,8 +104,14 @@ const RegistrationScreen = props => {
         password={password}
         isDisable={isDisableElement}
       />
+
       <View style={styles.policyBlock}>
-        <Checkbox style={styles.checkBox} />
+        <CheckBox
+          onClick={() => toggleChecked(!isChecked)}
+          isChecked={isChecked}
+          uncheckedCheckBoxColor={'#E7E9F5'}
+          checkedCheckBoxColor={'#3066E0'}
+        />
         <Text style={styles.polityText}>
           Я согласен с{' '}
           <Text style={styles.privacyPolicy}>Политикой Конфиденциальности</Text>
@@ -115,7 +122,8 @@ const RegistrationScreen = props => {
         <Button
           text="Регистрация"
           handle={handleSignUp}
-          disable={isDisableElement}
+          showLoading={isDisableElement}
+          isChecked={isChecked}
         />
       </View>
     </View>
@@ -158,11 +166,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: '2%',
-  },
-  checkBox: {
-    backgroundColor: '#E7E9F5',
-    borderRadius: 1,
-    borderWidth: 0,
   },
   polityText: {
     width: '80%',
