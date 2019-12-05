@@ -8,6 +8,7 @@ const Inputs = ({
   updatePassword,
   email,
   password,
+  isDisable,
 }) => {
   const [secureText, setsecureText] = useState(true);
 
@@ -19,6 +20,7 @@ const Inputs = ({
         onChangeText={text => updateLogin(text)}
         value={email}
         keyboardType="email-address"
+        editable={!isDisable}
         // autoFocus={true}
       />
       {loginError && <Text style={styles.error}>{loginError}</Text>}
@@ -29,6 +31,7 @@ const Inputs = ({
         onChangeText={text => updatePassword(text)}
         value={password}
         secureTextEntry={secureText}
+        editable={!isDisable}
       />
       {passwordError && <Text style={styles.error}>{passwordError}</Text>}
     </View>

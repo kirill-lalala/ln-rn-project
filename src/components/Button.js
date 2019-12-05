@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text, TouchableHighlight, View, StyleSheet} from 'react-native';
+import {Loader} from './Loader';
 
-const Button = ({text, handle, inversion}) => {
+const Button = ({text, handle, inversion, disable}) => {
   return (
-    <TouchableHighlight underlayColor="white" onPress={handle}>
-      <View style={[styles.button, inversion && styles.buttonInversion]}>
-        <Text style={[styles.buttonText, inversion && styles.textInversion]}>
-          {text}
-        </Text>
-      </View>
-    </TouchableHighlight>
+    <>
+      <TouchableHighlight
+        underlayColor="white"
+        onPress={handle}
+        style={{marginBottom: '2%'}}>
+        <View style={[styles.button, inversion && styles.buttonInversion]}>
+          <Text style={[styles.buttonText, inversion && styles.textInversion]}>
+            {text}
+          </Text>
+        </View>
+      </TouchableHighlight>
+      {disable && <Loader />}
+    </>
   );
 };
 

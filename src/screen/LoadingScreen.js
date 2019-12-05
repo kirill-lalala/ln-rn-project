@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import {View, Text, StyleSheet, ActivityIndicator} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import fire from '../config/fire';
+import {Loader} from '../components/Loader';
 
 const LoadingScreen = props => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const LoadingScreen = props => {
 
   return (
     <View style={styles.container}>
-      <ActivityIndicator size={60} color="#405EF5" />
+      <Loader size={60} color="#405EF5" />
       <Text style={styles.text}>Загрузка...</Text>
     </View>
   );

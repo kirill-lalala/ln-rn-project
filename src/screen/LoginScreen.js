@@ -9,11 +9,13 @@ const LoginScreen = props => {
   const [password, setPassword] = useState('');
   const [errorLoginMessage, setErrorLoginMessage] = useState(' ');
   const [errorPasswordMessage, setErrorPasswordMessage] = useState(' ');
+  const [isDisableElement, toggleDisableElement] = useState(false);
 
   const updateLogin = email => setEmail(email);
   const updatePassword = password => setPassword(password);
 
   const handleLogin = () => {
+    toggleDisableElement(true);
     setErrorLoginMessage(' ');
     setErrorPasswordMessage(' ');
     fire
@@ -23,6 +25,7 @@ const LoginScreen = props => {
         props.navigation.navigate('Map');
       })
       .catch(error => {
+        toggleDisableElement(false);
         switch (error.code) {
           case 'auth/invalid-email':
           case 'auth/user-disabled':
@@ -47,6 +50,7 @@ const LoginScreen = props => {
         updatePassword={updatePassword}
         email={email}
         password={password}
+        isDisable={isDisableElement}
       />
 
       <View style={styles.registration}>
@@ -60,14 +64,10 @@ const LoginScreen = props => {
           </View>
         </TouchableHighlight>
 
-        <Button text="Войти" handle={handleLogin} />
+        <Button text="Войти" handle={handleLogin} disable={isDisableElement} />
       </View>
     </View>
   );
-};
-
-LoginScreen.navigationOptions = {
-  // headerTitle: <Switches />,
 };
 
 const styles = StyleSheet.create({
