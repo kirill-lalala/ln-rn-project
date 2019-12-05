@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#252D76',
     opacity: 0.5,
-    marginTop: 8,
+    marginTop: '3%',
   },
   input: {
     borderBottomWidth: 1,

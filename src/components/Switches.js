@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, Button, TouchableHighlight} from 'react-native';
 
 const Switches = props => {
-
   return (
     <View style={styles.wrap}>
       <TouchableHighlight

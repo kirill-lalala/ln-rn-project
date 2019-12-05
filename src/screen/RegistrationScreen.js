@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   photoBlock: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 30,
+    marginBottom: '5%',
   },
   photoText: {
     marginRight: 70,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   policyBlock: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 16,
+    marginTop: '2%',
   },
   checkBox: {
     backgroundColor: '#E7E9F5',
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     borderWidth: 0,
   },
   polityText: {
-    width: '60%',
+    width: '80%',
     marginLeft: 7,
     paddingTop: 3,
     fontSize: 14,
