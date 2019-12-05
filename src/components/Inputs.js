@@ -17,11 +17,10 @@ const Inputs = ({
   password,
   isDisable,
 }) => {
-  const [showPassword, setShowPassword] = useState(true);
+  const [isHidePassword, setShowPassword] = useState(true);
   const onEyePress = () => {
-    setShowPassword(!showPassword);
+    setShowPassword(!isHidePassword);
   };
-
 
   return (
     <View>
@@ -39,13 +38,16 @@ const Inputs = ({
       <Text style={styles.label}>Пароль</Text>
       <View>
         <TextInput
-          style={[styles.input, showPassword && styles.password]}
+          style={[styles.input, isHidePassword && styles.password]}
           onChangeText={text => updatePassword(text)}
           value={password}
-          secureTextEntry={showPassword}
+          secureTextEntry={isHidePassword}
           editable={!isDisable}
         />
-        <TouchableOpacity style={styles.eye} onPressIn={onEyePress} onPressOut={onEyePress}>
+        <TouchableOpacity
+          style={styles.eye}
+          onPressIn={onEyePress}
+          onPressOut={onEyePress}>
           <Svg
             width="18"
             height="14"
