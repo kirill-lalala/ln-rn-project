@@ -1,11 +1,13 @@
 import React from 'react';
 import {Text, TouchableHighlight, View, StyleSheet} from 'react-native';
 
-const Button = ({text, handle}) => {
+const Button = ({text, handle, inversion}) => {
   return (
     <TouchableHighlight underlayColor="white" onPress={handle}>
-      <View style={styles.button}>
-        <Text style={styles.buttonText}>{text}</Text>
+      <View style={[styles.button, inversion && styles.buttonInversion]}>
+        <Text style={[styles.buttonText, inversion && styles.textInversion]}>
+          {text}
+        </Text>
       </View>
     </TouchableHighlight>
   );
@@ -23,6 +25,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontFamily: 'Quicksand-Bold',
+  },
+  buttonInversion: {
+    backgroundColor: '#fff',
+  },
+  textInversion: {
+    color: '#3168DE',
   },
 });
 export default Button;
