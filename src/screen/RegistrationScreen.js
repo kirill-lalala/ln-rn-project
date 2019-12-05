@@ -13,6 +13,7 @@ const RegistrationScreen = props => {
   const [errorLoginMessage, setErrorLoginMessage] = useState(' ');
   const [errorPasswordMessage, setErrorPasswordMessage] = useState(' ');
   const [avatar, setAvatar] = useState(null);
+  const [isDisableElement, toggleDisableElement] = useState(false);
 
   const handlePickAvatar = () => {
     const options = {
@@ -27,13 +28,16 @@ const RegistrationScreen = props => {
   const updatePassword = password => setPassword(password);
 
   const handleSignUp = () => {
+    toggleDisableElement(true);
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         props.navigation.navigate('Map');
+        toggleDisableElement(false);
       })
       .catch(error => {
+        toggleDisableElement(false);
         switch (error.code) {
           case 'auth/invalid-email':
             return setErrorLoginMessage(
@@ -94,7 +98,7 @@ const RegistrationScreen = props => {
       </View>
 
       <View style={styles.regButton}>
-        <Button text="Регистрация" handle={handleSignUp} />
+        <Button text="Регистрация" handle={handleSignUp} disable={isDisableElement} />
       </View>
     </View>
   );
@@ -102,7 +106,7 @@ const RegistrationScreen = props => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: '1%',
     paddingTop: 50,
   },
   photoBlock: {

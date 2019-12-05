@@ -31,7 +31,7 @@ const Inputs = ({
         value={email}
         keyboardType="email-address"
         editable={!isDisable}
-        // autoFocus={true}
+        autoFocus={true}
       />
       {loginError && <Text style={styles.error}>{loginError}</Text>}
 

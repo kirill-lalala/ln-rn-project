@@ -4,6 +4,7 @@ import {View, Text, StyleSheet, Button, TouchableHighlight} from 'react-native';
 const Switches = props => {
   const isActiveButton = routeName =>
     props.scene.route.routeName === routeName && styles.active;
+
   return (
     <View style={styles.wrap}>
       <TouchableHighlight

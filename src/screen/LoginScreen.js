@@ -23,6 +23,7 @@ const LoginScreen = props => {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         props.navigation.navigate('Map');
+        toggleDisableElement(false);
       })
       .catch(error => {
         toggleDisableElement(false);
