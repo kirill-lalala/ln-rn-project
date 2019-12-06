@@ -14,7 +14,7 @@ const Button = ({text, handle, inversion, showLoading, isChecked = true}) => {
           style={[
             styles.button,
             inversion && styles.buttonInversion,
-            !isChecked && styles.disable,
+            (!isChecked || showLoading) && styles.disable,
           ]}>
           <Text style={[styles.buttonText, inversion && styles.textInversion]}>
             {text}

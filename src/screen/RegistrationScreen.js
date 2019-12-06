@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, Linking} from 'react-native';
 import CheckBox from 'react-native-check-box';
 import Svg, {Path} from 'react-native-svg';
 import Inputs from '../components/Inputs';
@@ -27,6 +27,10 @@ const RegistrationScreen = props => {
 
   const updateLogin = email => setEmail(email);
   const updatePassword = password => setPassword(password);
+
+  const onClickPolicy = () => {
+    Linking.openURL('https://m.vk.com/feed').catch((err) => console.error('An error occurred', err));
+  };
 
   const handleSignUp = () => {
     toggleDisableElement(true);
@@ -114,7 +118,9 @@ const RegistrationScreen = props => {
         />
         <Text style={styles.polityText}>
           Я согласен с{' '}
-          <Text style={styles.privacyPolicy}>Политикой Конфиденциальности</Text>
+          <Text style={styles.privacyPolicy} onPress={onClickPolicy}>
+            {'Политикой \n Конфиденциальности'}
+          </Text>
         </Text>
       </View>
 
@@ -168,7 +174,6 @@ const styles = StyleSheet.create({
     marginTop: '2%',
   },
   polityText: {
-    width: '80%',
     marginLeft: 7,
     paddingTop: 3,
     fontSize: 14,
